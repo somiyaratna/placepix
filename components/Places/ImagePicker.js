@@ -6,6 +6,7 @@ import {
   PermissionStatus,
 } from "expo-image-picker";
 import { Colors } from "../../constants/colors";
+import OutlinedButton from "../UI/OutlinedButton";
 
 const ImagePicker = () => {
   const [pickedImage, setPickedImage] = useState();
@@ -49,7 +50,9 @@ const ImagePicker = () => {
           <Text>Its your favorite place. Take a pic!!</Text>
         )}
       </View>
-      <Button title="Take Image" onPress={takeImageHandler} />
+      <OutlinedButton icon="camera" onPress={takeImageHandler}>
+        Take Image
+      </OutlinedButton>
     </View>
   );
 };
@@ -64,7 +67,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.primary100,
-    borderRadius: 4,
+    borderRadius: 8,
+    overflow: "hidden",
   },
   image: {
     width: "100%",
