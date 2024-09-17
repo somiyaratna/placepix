@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "placepix",
-    "slug": "placepix",
+    "name": "Placepix",
+    "slug": "Placepix",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +22,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Allow Placepix to access your camera?"
+        }
+      ]
+    ]
   }
 }
