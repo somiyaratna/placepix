@@ -33,12 +33,19 @@ const ImagePicker = () => {
       return;
     }
 
-    const image = await launchCameraAsync({
-      allowsEditing: true,
-      aspect: [16, 9],
-      quality: 0.5,
-    });
-    setPickedImage(image.assets[0].uri);
+    try {
+      const image = await launchCameraAsync({
+        allowsEditing: true,
+        aspect: [16, 9],
+        quality: 0.5,
+      });
+
+      if (!image.canceled) {
+        setPickedImage(image.assets[0].uri);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -66,7 +73,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: Colors.primary100,
+    backgroundColor: Colors.primary50,
     borderRadius: 8,
     overflow: "hidden",
   },
