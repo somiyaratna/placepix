@@ -33,6 +33,7 @@ const PlaceForm = ({ onCreatePlace }) => {
       <View>
         <Text style={styles.label}>Title</Text>
         <TextInput
+          placeholder="Place Name"
           style={styles.input}
           onChangeText={changeTitleHandler}
           value={enteredTitle}
